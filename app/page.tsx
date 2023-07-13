@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <main>
       <MainBannerImage />
-      <MainPageCard title={'s'} subtitle={'s'}>
+      <MainPageCard>
         <div className='grid grid-cols-2 sm:grid-cols-4 w-full max-w-[1280px] px-12 justify-evenly gap-2 md:gap-4 lg:gap-8'>
           {SERVICE_MENU.map((item) => (
             <Link
@@ -37,9 +37,9 @@ export default function Home() {
                 className='absolute rounded-xl brightness-50'
                 fill
                 src={selectImage(SERVICE_MENU.indexOf(item))!}
-                alt={''}
+                alt={'gg'}
               />
-              <div className='absolute w-full h-full text-white rounded-xl flex justify-center items-center text-2xl font-light p-4'>
+              <div className='absolute w-full h-full text-white rounded-xl flex justify-center items-center text-2xl font-light p-2 md:p-4'>
                 <div className='flex justify-center items-center w-full h-full border-2 hover:border-[#EC662A] hover:text-[#EC662A] rounded-lg'>
                   {item.label}
                 </div>

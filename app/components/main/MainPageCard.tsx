@@ -1,6 +1,6 @@
 interface MainPageCardProps {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   children: React.ReactNode;
 }
 

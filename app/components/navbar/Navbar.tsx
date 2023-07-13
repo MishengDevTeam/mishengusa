@@ -8,7 +8,7 @@ interface NavbarProps {}
 const Navbar: React.FC<NavbarProps> = ({}) => {
   return (
     <nav className='py-4 px-8 shadow-md'>
-      <div className='flex justify-between items-center w-full max-w-[1920px] h-[60px]'>
+      <div className='flex justify-between items-center w-full max-w-[1920px] h-[32px] sm:h-[60px]'>
         <Link href='/' className='w-[140px]'>
           <Image
             className='hidden sm:block'
@@ -19,8 +19,8 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
           />
           <Image
             className='block sm:hidden'
-            width={80}
-            height={80}
+            width={48}
+            height={48}
             src={'/assets/images/logo/square.png'}
             alt={'logo'}
           />
