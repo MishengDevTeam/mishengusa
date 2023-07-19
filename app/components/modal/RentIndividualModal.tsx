@@ -198,7 +198,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
   if (step == 1) {
     bodyContent = (
       <div
-        className={`w-full flex flex-col py-1 px-2 h-[60vh] sm:h-[70vh] overflow-x-hidden overflow-y-scroll cursor-default`}
+        className={`w-full flex flex-col py-1 px-2 h-[55vh] sm:h-[70vh] overflow-x-hidden overflow-y-scroll cursor-default`}
       >
         <div className='flex justify-between text-xs text-neutral-700 pb-1'>
           <div className='md:text-sm'>
@@ -253,7 +253,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
   }
 
   let footerContent = (
-    <div className='flex flex-col gap-2 w-full h-full px-8'>
+    <div className='flex flex-col gap-0 w-full h-full px-8'>
       <div className={`flex justify-evenly`}>
         <RentIndiFooterButton
           color='#9DCAEB'
@@ -274,7 +274,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
             onClick={() => {
               setStep(2);
             }}
-            className='w-full bg-[#EC662A] py-3 rounded-full text-white text-xl'
+            className='w-full bg-[#EC662A] py-2 rounded-full text-white text-xl'
           >
             我要申请
           </button>
@@ -283,7 +283,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
             onClick={() => {
               setStep(1);
             }}
-            className='w-full bg-[#EC662A] py-3 rounded-full text-white text-xl'
+            className='w-full bg-[#EC662A] py-2 rounded-full text-white text-xl'
           >
             后退
           </button>

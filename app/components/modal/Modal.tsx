@@ -51,9 +51,7 @@ const Modal: React.FC<ModalProps> = ({
           <div className='relative flex flex-col w-full bg-white outline-none focus:outline-none translate h-full lg:h-auto md:h-auto border-0 rounded-lg shadow-lg'>
             {/* HEADER */}
             <div
-              className={`relative flex items-center justify-center rounded-t-lg border-b truncate
-              py-4
-              `}
+              className={`relative flex items-center justify-center rounded-t-lg border-b truncate py-2`}
             >
               <div className={`text-lg font-semibold truncate`}>{title}</div>
               <button onClick={onClose} className='absolute right-6'>
@@ -61,13 +59,11 @@ const Modal: React.FC<ModalProps> = ({
               </button>
             </div>
             {/* BODY */}
-            <div className={`flex relative justify-center py-4 px-2`}>
+            <div className={`flex relative justify-center py-2 px-2`}>
               {body}
             </div>
             {/* FOOTER */}
-            <div className={`flex justify-center pt-2 pb-4 border-t`}>
-              {footer}
-            </div>
+            <div className={`flex justify-center p-2 border-t`}>{footer}</div>
           </div>
         </div>
         {disabled && <div className='h-50'>loadingScreen</div>}
