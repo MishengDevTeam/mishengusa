@@ -97,9 +97,9 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
             <button
               onClick={() => {
                 handleCopy();
-                router.push('https://open.kakao.com/o/sQbwnisf');
+                router.push('weixin://contacts/profile/cosHL0');
               }}
-              className='flex justify-center items-center w-[80%] h-[40px] max-w-[240px] bg-[#FFD800] rounded-lg gap-1'
+              className='flex justify-center items-center w-[80%] h-[40px] max-w-[240px] text-white bg-[#1ECD18] rounded-lg gap-1'
             >
               <RiWechatFill size={24} />
               <span>点击这里!</span>

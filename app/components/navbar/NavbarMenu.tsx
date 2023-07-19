@@ -10,7 +10,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ menuOpen, handleMenu }) => {
   return (
     <div className='flex justify-end w-[140px]'>
       <Link
-        href={'/'}
+        href={'/customer'}
         className='hidden md:block text-xl font-light hover:text-[#EC662A] transition'
       >
         顾客服务
