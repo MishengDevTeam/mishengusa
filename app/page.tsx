@@ -26,7 +26,7 @@ export default function Home() {
     <main className='relative top-[64px] sm:top-[94px]'>
       <MainBannerImage />
       <MainPageCard>
-        <div className='grid grid-cols-2 sm:grid-cols-4 w-full max-w-[1280px] px-12 pb-12 mb-12 justify-evenly gap-2 md:gap-4 lg:gap-8 h-full'>
+        <div className='grid grid-cols-2 sm:grid-cols-4 w-full max-w-[1280px] px-12 pb-12 mb-12 justify-evenly items-start gap-2 md:gap-4 lg:gap-8 h-full'>
           {SERVICE_MENU.map((item) => (
             <Link
               className={`relative flex justify-center items-center border border-neutral-300 aspect-square w-full rounded-xl text-white`}
@@ -40,7 +40,7 @@ export default function Home() {
                 alt={'gg'}
               />
               <div className='absolute w-full h-full text-white rounded-xl flex justify-center items-center text-lg md:text-2xl font-light p-1 md:p-2 xl:p-4'>
-                <div className='flex justify-center items-center w-full h-full border border-dashed hover:border-solid hover:border-[#EC662A] hover:text-[#EC662A] rounded-lg'>
+                <div className='flex justify-center items-center w-full h-full border hover:border-solid hover:border-[#EC662A] hover:text-[#EC662A] rounded-lg'>
                   {item.label}
                 </div>
               </div>

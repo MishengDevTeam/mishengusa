@@ -17,7 +17,7 @@ const RentPage = ({}) => {
   const [listings, setListings] = useState<any[]>([]);
   const [start, setStart] = useState<string>('0');
   const [isLoading, setIsLoading] = useState(true);
-  const [isSearchOn, setIsSearchOn] = useState<boolean>(false);
+  const [isSearchOn, setIsSearchOn] = useState<boolean>(true);
   const [isListingOn, setIsListingOn] = useState<boolean>(false);
   const [searchListings, setSearchListings] = useState<any[] | null>(null);
   const [mapListings, setMapListings] = useState({});
@@ -111,7 +111,7 @@ const RentPage = ({}) => {
           setIsSearchOn={setIsSearchOn}
           setSearchListings={setSearchListings}
           mapListings={mapListings}
-          // setMapListings={setMapListings}
+          setMapListings={setMapListings}
         />
         <RentListingSection
           searchListings={searchListings}

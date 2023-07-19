@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
         </div>
       </nav>
       {menuOpen && (
-        <menu className='absolute md:hidden flex flex-col items-center right-0 w-[30vw] max-w-[160px] h-auto bg-white shadow-md rounded-b-lg z-10'>
+        <menu className='fixed md:hidden flex flex-col items-center right-0 w-[30vw] max-w-[160px] h-auto bg-white shadow-md rounded-b-lg z-10 top-[64px] sm:top-[94px]'>
           {USER_MENU_ITEM.map((item) => (
             <NavbarUserMenuItem
               key={USER_MENU_ITEM.indexOf(item)}

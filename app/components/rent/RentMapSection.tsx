@@ -14,7 +14,7 @@ interface MapSectionProps {
   setIsSearchOn: (setIsSearchOn: boolean) => void;
   setSearchListings: any;
   mapListings: any;
-  // setMapListings: any;
+  setMapListings: any;
 }
 
 const MapSection: React.FC<MapSectionProps> = ({
@@ -24,7 +24,7 @@ const MapSection: React.FC<MapSectionProps> = ({
   setIsSearchOn,
   setSearchListings,
   mapListings,
-  // setMapListings,
+  setMapListings,
   adviceOn,
   setAdviceOn,
 }) => {
@@ -47,7 +47,7 @@ const MapSection: React.FC<MapSectionProps> = ({
         isSearchOn={isSearchOn}
         setIsSearchOn={setIsSearchOn}
         setSearchListings={setSearchListings}
-        // setMapListings={setMapListings}
+        setMapListings={setMapListings}
       />
       <div
         onClick={() => setIsSearchOn(!isSearchOn)}
@@ -66,7 +66,7 @@ const MapSection: React.FC<MapSectionProps> = ({
           <p className='text-[#fff] text-sm sm:text-base'>搜索房源</p>
         )}
       </div>
-
+      {/* 
       {adviceOn && (
         <div
           onClick={() => {
@@ -91,7 +91,7 @@ const MapSection: React.FC<MapSectionProps> = ({
             <p>- 有需要更多的房间照片请联系我们</p>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
