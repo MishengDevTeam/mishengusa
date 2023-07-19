@@ -15,7 +15,9 @@ import { FaRegShareSquare } from 'react-icons/fa';
 import { RiAlarmWarningLine, RiWechatFill } from 'react-icons/ri';
 import RentIndiContactButton from './rent/RentIndiContactButton';
 import { MdEmail, MdPhone, MdTextsms } from 'react-icons/md';
+import { IoArrowDownCircleSharp } from 'react-icons/io5';
 import Image from 'next/image';
+import useReportModal from '../hooks/useReportModal';
 
 interface RentIndividualModalProps {}
 
@@ -32,6 +34,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
   const [currentListing, setCurrentListing] = useState<any | null>(null);
 
   const rentIndiModal = useRentIndividualModal();
+  const reportModal = useReportModal();
 
   const params = useSearchParams();
   const rentlistingid = params?.get('rentlisting');
@@ -71,7 +74,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
 
   const reportListing = () => {
     rentIndiModal.onClose();
-    // reportModal.onOpen();
+    reportModal.onOpen();
   };
 
   const onCloseButton = () => {
@@ -214,6 +217,9 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
           buildingToSubwayInfo={buildingToSubwayInfo}
           reviewInfo={reviewInfo}
         />
+        <div className='absolute bottom-0 right-2 translate-y-4 w-[28px] h-[28px] rounded-full'>
+          <IoArrowDownCircleSharp size={28} color='#EC662A rounded-full' />
+        </div>
       </div>
     );
   } else if (step == 2) {

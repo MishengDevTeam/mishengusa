@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import ToasterProvider from './components/ToasterProvider';
+import ReportModal from './components/modal/ReportModal';
 
 const font = Nunito_Sans({ subsets: ['latin'] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
       />
       <body className={font.className}>
         <ToasterProvider />
+        <ReportModal />
         <Navbar />
         {children}
         <Footer />
