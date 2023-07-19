@@ -23,7 +23,7 @@ export default function Home() {
     }
   }, []);
   return (
-    <main className='relative top-[64px] sm:top-[94px]'>
+    <main className='relative pt-[64px] sm:pt-[94px]'>
       <MainBannerImage />
       <MainPageCard>
         <div className='grid grid-cols-2 sm:grid-cols-4 w-full max-w-[1280px] px-12 pb-12 mb-12 justify-evenly items-start gap-2 md:gap-4 lg:gap-8 h-full'>

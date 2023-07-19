@@ -61,23 +61,23 @@ const CustomerServicePage: React.FC<pageProps> = ({}) => {
                     className='flex w-[320px] sm:w-[200px] h-[60px] items-center justify-center w-full bg-green-400 text-[#FFF] py-2 rounded-full gap-2'
                   >
                     <MdPhone size={20} />
-                    <p>点击这里打电话～</p>
+                    <p>致电请点这里～</p>
                   </a>
                   <a
                     href={`sms:9142948785&body=문의하기`}
                     className='flex w-[320px] sm:w-[200px] h-[60px] items-center justify-center w-full bg-blue-400 text-[#FFF] py-2 rounded-full gap-2'
                   >
                     <MdTextsms size={20} />
-                    <span>点击这里发短信～</span>
+                    <span>短信请点这里～</span>
                   </a>
                   <button
                     onClick={() => {
-                      router.push('weixin://contacts/profile/cosHL0');
+                      router.push('weixin://dl/chat?cosHL0');
                     }}
                     className='flex w-[320px] sm:w-[200px] h-[60px] items-center justify-center w-full bg-[#1ECD18] text-[#FFF] py-2 rounded-full gap-2'
                   >
                     <RiWechatFill size={24} />
-                    <span>点击这里发微信私信～</span>
+                    <span>微信请点这里～</span>
                   </button>
                 </div>
               </div>
