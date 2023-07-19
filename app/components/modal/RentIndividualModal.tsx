@@ -90,7 +90,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
               <Image
                 width={200}
                 height={300}
-                src={'/assets/images/img/qr_image.png'}
+                src={'/assets/images/img/qr_img.png'}
                 alt={'qr_image'}
               />
             </div>
@@ -177,14 +177,14 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
               className='flex items-center justify-center w-full bg-green-400 text-[#FFF] py-2 rounded-xl gap-2'
             >
               <MdPhone size={20} />
-              <p>点击这里打电话</p>
+              <p>点击这里打电话～</p>
             </a>
             <a
               href={`sms:9142948785&body=${currentLink}`}
               className='flex items-center justify-center w-full bg-blue-400 text-[#FFF] py-2 rounded-xl gap-2'
             >
               <MdTextsms size={20} />
-              点击这里发短信
+              点击这里发短信～
             </a>
           </div>
         );
@@ -285,7 +285,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
             }}
             className='w-full bg-[#EC662A] py-3 rounded-full text-white text-xl'
           >
-            回去
+            后退
           </button>
         )}
       </div>
