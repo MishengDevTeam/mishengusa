@@ -86,13 +86,10 @@ export const SEARCH_OPTIONS = {
     { label: '1 Bedroom', value: '1 Bedroom' },
     { label: '2 Bedroom', value: '2 Bedroom' },
     { label: '3 Bedroom', value: '3 Bedroom' },
-    { label: '4+ Bedroom', value: '4+ Bedroom' },
   ],
   bath: [
-    { label: 'Share', value: 'Share' },
     { label: '1 Bathroom', value: '1 Bathroom' },
     { label: '2 Bathroom', value: '2 Bathroom' },
-    { label: '3+ Bathroom', value: '3+ Bathroom' },
   ],
   subway: [
     { label: '1', value: '1' },

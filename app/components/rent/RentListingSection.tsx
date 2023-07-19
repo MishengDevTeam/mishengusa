@@ -93,35 +93,55 @@ const ListingSection: React.FC<ListingSectionProps> = ({
           刷新所有房源
         </div>
       </div>
-      <InfiniteScroll
-        next={infiniteScrollNext}
-        hasMore={listings.length < totalLength}
-        scrollThreshold={0.95}
-        height={height}
-        loader={
-          <div className='w-full flex justify-center items-center h-[60px] bg-[#F6A484] text-[#FFFFFF] gap-8'>
-            刷新中……
+      {searchListings == null ? (
+        <InfiniteScroll
+          next={infiniteScrollNext}
+          hasMore={listings.length < totalLength}
+          scrollThreshold={0.95}
+          height={height}
+          loader={
+            <div className='w-full flex justify-center items-center h-[60px] bg-[#F6A484] text-[#FFFFFF] gap-8'>
+              刷新中……
+            </div>
+          }
+          dataLength={listings.length}
+          endMessage={
+            <div className='w-full flex justify-center items-center h-[60px] bg-[#F6A484] text-[#FFFFFF] gap-8'>
+              所有房源
+            </div>
+          }
+        >
+          <div className='grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 min-[1960px]:grid-cols-4 min-[2400px]:grid-cols-5 p-2 sm:pt-0 overflow-x-hidden overflow-y-scroll gap-2 items-start'>
+            {listings.map((listing) => {
+              return (
+                <RentListingCard
+                  key={listings.indexOf(listing)}
+                  listing={listing}
+                  rentIndividualOpen={rentIndividualOpen}
+                />
+              );
+            })}
           </div>
-        }
-        dataLength={listings.length}
-        endMessage={
-          <div className='w-full flex justify-center items-center h-[60px] bg-[#F6A484] text-[#FFFFFF] gap-8'>
-            所有房源
-          </div>
-        }
-      >
-        <div className='grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 min-[1960px]:grid-cols-4 min-[2400px]:grid-cols-5 p-2 sm:pt-0 overflow-x-hidden overflow-y-scroll gap-2'>
-          {listings.map((listing) => {
-            return (
+        </InfiniteScroll>
+      ) : searchListings?.length != 0 ? (
+        <div className='h-[76vh] sm:h-[83vh] overflow-y-scroll'>
+          <div
+            className={`grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 min-[1960px]:grid-cols-4 min-[2400px]:grid-cols-5 p-4 sm:pt-0 overflow-x-hidden overflow-y-scroll gap-2 items-start sm:h-auto`}
+          >
+            {searchListings?.map((listing) => (
               <RentListingCard
-                key={listings.indexOf(listing)}
-                listing={listing}
+                key={(listing as any)._id + searchListings.indexOf(listing)}
                 rentIndividualOpen={rentIndividualOpen}
+                listing={listing}
               />
-            );
-          })}
+            ))}
+          </div>
         </div>
-      </InfiniteScroll>
+      ) : (
+        <div className='flex justify-center items-center w-full h-full'>
+          没有搜索结果
+        </div>
+      )}
     </div>
   );
 };

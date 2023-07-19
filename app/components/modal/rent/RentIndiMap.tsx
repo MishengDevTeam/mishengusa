@@ -13,7 +13,11 @@ const RentIndiMap: React.FC<RentIndiMapProps> = ({ title, coordinate }) => {
   return (
     <div className='flex flex-col gap-2'>
       <div className='font-semibold text-lg'>{title}</div>
-      <Map initCoordinate={coordinate} mapStyleCommon={mapStyleCommon} />
+      <Map
+        initCoordinate={coordinate}
+        mapStyleCommon={mapStyleCommon}
+        showRange
+      />
     </div>
   );
 };

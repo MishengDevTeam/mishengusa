@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
 
   return (
     <>
-      <nav className='py-4 px-8 shadow-md'>
+      <nav className='fixed w-full z-20 bg-[#fff] py-4 px-8 shadow-md top-0'>
         <div className='flex justify-between items-center w-full max-w-[1920px] h-[32px] sm:h-[60px]'>
           <Link href='/' className='w-[140px]'>
             <Image

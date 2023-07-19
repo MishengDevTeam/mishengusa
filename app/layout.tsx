@@ -3,6 +3,7 @@ import { Nunito_Sans } from 'next/font/google';
 import type { Metadata } from 'next';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
+import ToasterProvider from './components/ToasterProvider';
 
 const font = Nunito_Sans({ subsets: ['latin'] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
       />
       <body className={font.className}>
+        <ToasterProvider />
         <Navbar />
         {children}
         <Footer />

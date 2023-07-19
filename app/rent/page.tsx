@@ -17,8 +17,11 @@ const RentPage = ({}) => {
   const [listings, setListings] = useState<any[]>([]);
   const [start, setStart] = useState<string>('0');
   const [isLoading, setIsLoading] = useState(true);
+  const [isSearchOn, setIsSearchOn] = useState<boolean>(false);
   const [isListingOn, setIsListingOn] = useState<boolean>(false);
   const [searchListings, setSearchListings] = useState<any[] | null>(null);
+  const [mapListings, setMapListings] = useState({});
+  const [adviceOn, setAdviceOn] = useState<boolean>(true);
 
   const rentIndividualModal = useRentIndividualModal();
   const rentNotiModal = useRentNotiModal();
@@ -43,6 +46,20 @@ const RentPage = ({}) => {
     }
     setStart((parseInt(start) + 20).toString());
   };
+
+  useEffect(() => {
+    const fetchMapData = async () => {
+      try {
+        const response = await axios.get(`/api/rentlisting`);
+        setMapListings(response.data.mapListing);
+      } catch (error) {
+        console.error('Error fetching data', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchMapData();
+  }, [rentNotiModal]);
 
   useEffect(() => {
     fetchData('0');
@@ -78,14 +95,24 @@ const RentPage = ({}) => {
   }, [rentIndividualModal, rentIndividualModal.onOpen, rentlistingid]);
 
   return (
-    <section className='w-full '>
+    <section className='w-full relative top-[64px] sm:top-[94px] pb-4 sm:pb-12 mb-12 '>
       <RentIndividualModal />
       <div
         className={`relative flex flex-col sm:flex-row w-full justify-center
-      ${isListingOn ? 'h-[88vh]' : 'h-auto'}
+      ${isListingOn ? 'h-[88vh]' : ''}
       `}
       >
-        <RentMapSection isListingOn={isListingOn} />
+        <RentMapSection
+          isListingOn={isListingOn}
+          setIsListingOn={setIsListingOn}
+          isSearchOn={isSearchOn}
+          adviceOn={adviceOn}
+          setAdviceOn={setAdviceOn}
+          setIsSearchOn={setIsSearchOn}
+          setSearchListings={setSearchListings}
+          mapListings={mapListings}
+          // setMapListings={setMapListings}
+        />
         <RentListingSection
           searchListings={searchListings}
           isListingOn={isListingOn}

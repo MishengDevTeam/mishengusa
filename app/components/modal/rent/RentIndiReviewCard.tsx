@@ -55,46 +55,36 @@ const RentIndiReviewCard: React.FC<RentIndiReviewCardProps> = ({
               onClick={setOpenReviewDetail}
               className='flex flex-row justify-between pt-1'
             >
-              <div className='text-[14px] cursor-pointer'>点击展开评论</div>
+              <div />
               <div className='text-[14px]'>右滑下一条</div>
             </div>
           </div>
         </div>
-        {openReviewDetail && (
-          <div className='flex flex-col bg-[#fafafa] w-[90%] h-[90%] rounded-lg shadow-lg p-4 gap-2'>
-            <div>
-              <div className='font-semibold'>公寓</div>
-              <div className='text-sm font-light'>
-                {reviewDetail.buildingReview}
-              </div>
-            </div>
-            <div>
-              <div className='font-semibold'>安全</div>
-              <div className='text-sm font-light'>
-                {reviewDetail.safeReview}
-              </div>
-            </div>
-            <div>
-              <div className='font-semibold'>交通</div>
-              <div className='text-sm font-light'>
-                {reviewDetail.transportationReview}
-              </div>
-            </div>
-            <div>
-              <div className='font-semibold'>生活服务</div>
-              <div className='text-sm font-light'>
-                {reviewDetail.convenienceReview}
-              </div>
-            </div>
-            <hr />
-            <div
-              onClick={setOpenReviewDetail}
-              className='w-full pt-2 text-center text-sm cursor-pointer'
-            >
-              关闭评论
+
+        <div className='flex flex-col bg-[#fafafa] w-[90%] h-[90%] rounded-lg shadow-lg p-4 gap-2'>
+          <div>
+            <div className='font-semibold'>公寓</div>
+            <div className='text-sm font-light'>
+              {reviewDetail.buildingReview}
             </div>
           </div>
-        )}
+          <div>
+            <div className='font-semibold'>安全</div>
+            <div className='text-sm font-light'>{reviewDetail.safeReview}</div>
+          </div>
+          <div>
+            <div className='font-semibold'>交通</div>
+            <div className='text-sm font-light'>
+              {reviewDetail.transportationReview}
+            </div>
+          </div>
+          <div>
+            <div className='font-semibold'>生活服务</div>
+            <div className='text-sm font-light'>
+              {reviewDetail.convenienceReview}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
