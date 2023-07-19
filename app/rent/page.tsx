@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Setup from '../components/Setup';
 import RentIndividualModal from '../components/modal/RentIndividualModal';
@@ -9,6 +9,10 @@ import RentMapSection from '../components/rent/RentMapSection';
 import axios from 'axios';
 import useRentIndividualModal from '../components/hooks/useRentIndividualModal';
 import useRentNotiModal from '../components/hooks/useRentNotiModal';
+
+function SearchBarFallback() {
+  return <>placeholder</>;
+}
 
 const RentPage = ({}) => {
   const hasModalOpened = useRef(false);
@@ -95,36 +99,38 @@ const RentPage = ({}) => {
   }, [rentIndividualModal, rentIndividualModal.onOpen, rentlistingid]);
 
   return (
-    <section className='w-full relative top-[64px] sm:top-[94px] pb-4 sm:pb-12 mb-12 '>
-      <RentIndividualModal />
-      <div
-        className={`relative flex flex-col sm:flex-row w-full justify-center
+    <Suspense fallback={<SearchBarFallback />}>
+      <section className='w-full relative top-[64px] sm:top-[94px] pb-4 sm:pb-12 mb-12 '>
+        <RentIndividualModal />
+        <div
+          className={`relative flex flex-col sm:flex-row w-full justify-center
       ${isListingOn ? 'h-[88vh]' : ''}
       `}
-      >
-        <RentMapSection
-          isListingOn={isListingOn}
-          setIsListingOn={setIsListingOn}
-          isSearchOn={isSearchOn}
-          adviceOn={adviceOn}
-          setAdviceOn={setAdviceOn}
-          setIsSearchOn={setIsSearchOn}
-          setSearchListings={setSearchListings}
-          mapListings={mapListings}
-          setMapListings={setMapListings}
-        />
-        <RentListingSection
-          searchListings={searchListings}
-          isListingOn={isListingOn}
-          setIsListingOn={setIsListingOn}
-          setDefaultListing={setDefaultListing}
-          listings={listings}
-          rentIndividualOpen={rentIndividualModal.onOpen}
-          infiniteScrollNext={infiniteScrollNext}
-          totalLength={600}
-        />
-      </div>
-    </section>
+        >
+          <RentMapSection
+            isListingOn={isListingOn}
+            setIsListingOn={setIsListingOn}
+            isSearchOn={isSearchOn}
+            adviceOn={adviceOn}
+            setAdviceOn={setAdviceOn}
+            setIsSearchOn={setIsSearchOn}
+            setSearchListings={setSearchListings}
+            mapListings={mapListings}
+            setMapListings={setMapListings}
+          />
+          <RentListingSection
+            searchListings={searchListings}
+            isListingOn={isListingOn}
+            setIsListingOn={setIsListingOn}
+            setDefaultListing={setDefaultListing}
+            listings={listings}
+            rentIndividualOpen={rentIndividualModal.onOpen}
+            infiniteScrollNext={infiniteScrollNext}
+            totalLength={600}
+          />
+        </div>
+      </section>
+    </Suspense>
   );
 };
 export default RentPage;
