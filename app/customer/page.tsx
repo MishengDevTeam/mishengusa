@@ -18,7 +18,7 @@ const CustomerServicePage: React.FC<pageProps> = ({}) => {
       <div className='flex p-8 justify-center'>
         <div className='flex w-full max-w-[1860px] shadow-xl rounded-lg lg:rounded-l-full lg:rounded-r-full border-2 border-neutral-200'>
           <div className='relative flex items-center justify-center lg:justify-end w-full lg:w-3/4 lg:h-[540px] bg-white rounded-l-full'>
-            <div className='flex flex-col items-center justify-center lg:justify-end w-full sm:flex-row gap-8 lg:pr-[10vw] p-8'>
+            <div className='flex flex-col items-center justify-center lg:justify-end w-full sm:flex-row gap-[4vw] lg:pr-[10vw] p-8'>
               <div className='flex-col flex sm:hidden md:flex items-center justify-center text-lg 2xl:text-2xl w-[240px]'>
                 <div className='w-[85px] h-auto flex flex-col mb-8'>
                   <div className='flex flex-row justify-center'>
@@ -34,24 +34,31 @@ const CustomerServicePage: React.FC<pageProps> = ({}) => {
                     桥接异国，点亮梦想
                   </span>
                   <br />
-                  我们为
-                  <span className='text-[#EC662A] font-bold'>中国留学生</span>
-                  <br />在
-                  <span className='text-[#EC662A] font-bold'>
-                    美国生活的挑战
+                  <span className='text-[#EC662A] font-bold text-[28px]'>
+                    米生
                   </span>
+                  为同学们
+                  <br />
+                  在异乡的生活
                   <br />
                   提供
-                  <span className='text-[#EC662A] font-bold'>解决方案</span>
+                  <span className='text-[#EC662A] font-bold'>服务与帮助</span>
                 </p>
               </div>
-              <Image
-                width={240}
-                height={360}
-                src={'/assets/images/img/qr_img.png'}
-                alt={'qr'}
-              />
-              <div className='flex flex-col'>
+              <div className='flex flex-col items-center font-light'>
+                <p className='text-center'>
+                  微信添加方式：
+                  <br className='sm:hidden' />
+                  截图后请扫描二维码
+                </p>
+                <Image
+                  width={240}
+                  height={360}
+                  src={'/assets/images/img/qr_img.png'}
+                  alt={'qr'}
+                />
+              </div>
+              <div className='w-full max-w-[200px] flex flex-col'>
                 <div className='w-full h-full flex flex-col items-center justify-center gap-4 py-2'>
                   {/* <div className='flex w-[320px] sm:w-[200px] h-[60px] items-center justify-center w-full bg-[#EC662A] text-[#FFF] py-2 rounded-full gap-2'>
                     +1 914 294 8785
