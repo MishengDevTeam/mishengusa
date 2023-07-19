@@ -1,6 +1,103 @@
+'use client';
+
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Setup from '../components/Setup';
+import RentIndividualModal from '../components/modal/RentIndividualModal';
+import RentListingSection from '../components/rent/RentListingSection';
+import RentMapSection from '../components/rent/RentMapSection';
+import axios from 'axios';
+import useRentIndividualModal from '../components/hooks/useRentIndividualModal';
+import useRentNotiModal from '../components/hooks/useRentNotiModal';
 
 const RentPage = ({}) => {
-  return <Setup />;
+  const hasModalOpened = useRef(false);
+  const hasNotiModalOpened = useRef(false);
+
+  const [listings, setListings] = useState<any[]>([]);
+  const [start, setStart] = useState<string>('0');
+  const [isLoading, setIsLoading] = useState(true);
+  const [isListingOn, setIsListingOn] = useState<boolean>(false);
+  const [searchListings, setSearchListings] = useState<any[] | null>(null);
+
+  const rentIndividualModal = useRentIndividualModal();
+  const rentNotiModal = useRentNotiModal();
+
+  const fetchData = async (start: string) => {
+    try {
+      const response = await axios.post(`/api/rentlisting`, {
+        start,
+      });
+      if (Array.isArray(response.data.recentListings)) {
+        setListings((prev) => [...prev, ...response.data.recentListings]);
+      } else {
+        console.error(
+          'recentListings is not an array:',
+          response.data.recentListings
+        );
+      }
+    } catch (error) {
+      console.error('Error fetching data', error);
+    } finally {
+      setIsLoading(false);
+    }
+    setStart((parseInt(start) + 20).toString());
+  };
+
+  useEffect(() => {
+    fetchData('0');
+  }, []);
+
+  const params = useSearchParams();
+  const rentlistingid = params?.get('rentlisting');
+
+  const infiniteScrollNext = useCallback(() => {
+    fetchData(start.toString());
+  }, [start]);
+
+  const setDefaultListing = useCallback(() => {
+    location.reload();
+  }, []);
+
+  useEffect(() => {
+    if (!hasNotiModalOpened.current) {
+      rentNotiModal.onOpen();
+      hasNotiModalOpened.current = true;
+    }
+  }, [rentNotiModal]);
+
+  useEffect(() => {
+    if (
+      !hasModalOpened.current &&
+      rentlistingid &&
+      rentIndividualModal.onOpen
+    ) {
+      rentIndividualModal.onOpen();
+      hasModalOpened.current = true;
+    }
+  }, [rentIndividualModal, rentIndividualModal.onOpen, rentlistingid]);
+
+  return (
+    <section className='w-full '>
+      <RentIndividualModal />
+      <div
+        className={`relative flex flex-col sm:flex-row w-full justify-center
+      ${isListingOn ? 'h-[88vh]' : 'h-auto'}
+      `}
+      >
+        <RentMapSection isListingOn={isListingOn} />
+        <RentListingSection
+          searchListings={searchListings}
+          isListingOn={isListingOn}
+          setIsListingOn={setIsListingOn}
+          setDefaultListing={setDefaultListing}
+          listings={listings}
+          rentIndividualOpen={rentIndividualModal.onOpen}
+          infiniteScrollNext={infiniteScrollNext}
+          totalLength={600}
+        />
+      </div>
+    </section>
+  );
 };
 export default RentPage;

@@ -7,7 +7,7 @@ interface FooterProps {}
 const Footer: React.FC<FooterProps> = ({}) => {
   return (
     <footer className='flex flex-col items-center justify-between w-full bg-[#FCE1D6] py-8 font-light'>
-      <div className='flex gap-8'>
+      <div className='flex flex-col md:flex-row items-center gap-8'>
         {FOOTER_MENU.map((item) => (
           <Link
             href={'/'}

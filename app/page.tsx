@@ -39,8 +39,8 @@ export default function Home() {
                 src={selectImage(SERVICE_MENU.indexOf(item))!}
                 alt={'gg'}
               />
-              <div className='absolute w-full h-full text-white rounded-xl flex justify-center items-center text-2xl font-light p-2 md:p-4'>
-                <div className='flex justify-center items-center w-full h-full border-2 hover:border-[#EC662A] hover:text-[#EC662A] rounded-lg'>
+              <div className='absolute w-full h-full text-white rounded-xl flex justify-center items-center text-xl md:text-2xl font-light p-1 md:p-4'>
+                <div className='flex justify-center items-center w-full h-full border hover:border-[#EC662A] hover:text-[#EC662A] rounded-lg'>
                   {item.label}
                 </div>
               </div>

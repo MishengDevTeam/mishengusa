@@ -1,8 +1,8 @@
 export const SERVICE_MENU = [
   { label: '找房子', url: 'rent' },
   { label: '找室友', url: 'roommate' },
-  { label: '买卖', url: 'buysell' },
-  { label: 'blog', url: 'blog' },
+  { label: '买卖平台', url: 'buysell' },
+  { label: '生活小助手', url: 'blog' },
 ];
 
 export const MAIN_SECTION = {
@@ -25,3 +25,11 @@ export const MAIN_SECTION = {
 };
 
 export const FOOTER_MENU = ['Privacy Policy', 'Terms of Use', 'hohoho'];
+
+export const USER_MENU_ITEM = [
+  { label: '找房子', url: 'rent' },
+  { label: '找室友', url: 'roommate' },
+  { label: '买卖平台', url: 'buysell' },
+  { label: '生活小助手', url: 'blog' },
+  { label: '客户服务', url: 'customer' },
+];
