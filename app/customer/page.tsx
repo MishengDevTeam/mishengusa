@@ -37,9 +37,9 @@ const CustomerServicePage: React.FC<pageProps> = ({}) => {
                   <span className='text-[#EC662A] font-bold text-[28px]'>
                     米生
                   </span>
-                  为同学们
+                  为同学们的
                   <br />
-                  在异乡的生活
+                  异乡生活
                   <br />
                   提供
                   <span className='text-[#EC662A] font-bold'>服务与帮助</span>
