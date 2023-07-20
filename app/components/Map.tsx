@@ -163,7 +163,7 @@ const Map: React.FC<MapProps> = ({
   }, [initCoordinate, mapListings, rentmain, setSearchListings, showRange]);
 
   return (
-    <div className={`w-full ${mapStyleCommon}`}>
+    <div className={`relative w-full z-0 ${mapStyleCommon}`}>
       <div className='map-container' ref={mapContainer} />
     </div>
   );

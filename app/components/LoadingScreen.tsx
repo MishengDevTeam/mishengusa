@@ -13,7 +13,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
   messagesubtitle,
 }) => {
   return (
-    <div className='absolute top-0 left-0 w-full h-full bg-white rounded-lg flex flex-col justify-center items-center gap-4 z-100000'>
+    <div className='absolute top-0 left-0 w-full h-full bg-white rounded-lg flex flex-col justify-center items-center gap-4 z-100'>
       <Image
         src={`/assets/images/logo/veri.png`}
         width={100}
