@@ -289,9 +289,9 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
             onClick={() => {
               setStep(1);
             }}
-            className='w-full bg-[#EC662A] py-2 rounded-full text-white text-xl'
+            className='w-full bg-[#EC662A] py-2 rounded-full text-white text-lg'
           >
-            后退
+            返回
           </button>
         )}
       </div>

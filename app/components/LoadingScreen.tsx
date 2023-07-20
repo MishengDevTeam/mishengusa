@@ -16,8 +16,8 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
     <div className='absolute top-0 left-0 w-full h-full bg-white rounded-lg flex flex-col justify-center items-center gap-4'>
       <Image
         src={`/assets/images/logo/veri.png`}
-        width={120}
-        height={60}
+        width={100}
+        height={50}
         alt='logo'
       />
       <LoadingSpinner />

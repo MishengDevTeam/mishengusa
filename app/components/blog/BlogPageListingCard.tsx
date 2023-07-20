@@ -81,7 +81,9 @@ const BlogPageListingCard: React.FC<BlogPageListingCardProps> = ({
         />
       </div>
       <div className='w-[65%] sm:w-[70%] py-2 flex flex-col justify-center'>
-        <p className='font-bold break-words md:truncate md:text-lg'>{title}</p>
+        <p className='w-[55vw] sm:w-full font-bold truncate md:text-lg'>
+          {title}
+        </p>
         <div className='flex flex-col sm:flex-row justify-between sm:py-1'>
           <div className='flex gap-1'>
             <Image

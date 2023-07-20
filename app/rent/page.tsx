@@ -9,6 +9,7 @@ import RentMapSection from '../components/rent/RentMapSection';
 import axios from 'axios';
 import useRentIndividualModal from '../components/hooks/useRentIndividualModal';
 import useRentNotiModal from '../components/hooks/useRentNotiModal';
+import LoadingScreen from '../components/LoadingScreen';
 
 function SearchBarFallback() {
   return <>placeholder</>;
@@ -108,6 +109,7 @@ const RentPage = ({}) => {
       `}
         >
           <RentMapSection
+            isLoading={isLoading}
             isListingOn={isListingOn}
             setIsListingOn={setIsListingOn}
             isSearchOn={isSearchOn}
@@ -130,6 +132,7 @@ const RentPage = ({}) => {
           />
         </div>
       </section>
+      {isLoading && <LoadingScreen />}
     </Suspense>
   );
 };
