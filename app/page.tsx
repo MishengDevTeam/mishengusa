@@ -26,7 +26,7 @@ export default function Home() {
     <main className='relative pt-[64px] sm:pt-[94px]'>
       <MainBannerImage />
       <MainPageCard>
-        <div className='grid grid-cols-2 sm:grid-cols-4 w-full max-w-[1280px] px-12 pb-12 mb-12 justify-evenly items-start gap-2 md:gap-4 lg:gap-8 h-full'>
+        <div className='grid grid-cols-2 sm:grid-cols-4 w-full max-w-[1280px] px-12 pb-12 justify-between items-start gap-2 md:gap-4 lg:gap-8 h-auto'>
           {SERVICE_MENU.map((item) => (
             <Link
               className={`relative flex justify-center items-center border border-neutral-300 aspect-square w-full rounded-xl text-white`}

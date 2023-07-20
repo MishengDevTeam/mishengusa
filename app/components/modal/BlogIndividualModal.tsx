@@ -135,7 +135,7 @@ const BlogIndividualModal: React.FC<BlogIndividualModalProps> = ({}) => {
 
           <p>{dateFormatter(new Date(currentListing.createdAt))}</p>
         </div>
-        <div>
+        <div className='w-full break-all'>
           <BlogTextBox content={currentListing.content} />
         </div>
       </div>
@@ -146,7 +146,7 @@ const BlogIndividualModal: React.FC<BlogIndividualModalProps> = ({}) => {
   );
 
   const footerContent = (
-    <div className='flex flex-col py-2 px-4 w-full sm:gap-1'>
+    <div className='flex flex-col p-2 w-full sm:gap-1'>
       <div className={`flex justify-evenly`}>
         <RentIndiFooterButton
           color='#9DCAEB'
@@ -167,10 +167,10 @@ const BlogIndividualModal: React.FC<BlogIndividualModalProps> = ({}) => {
           onClick={() => {
             handleClick((nextListing as any)._id);
           }}
-          className='flex flex-row gap-2 sm:gap-4 w-full h-[56px] overflow-hidden items-center cursor-pointer hover:bg-[#EC662A]/10 rounded-lg'
+          className='flex flex-row gap-2 sm:gap-4 w-full overflow-hidden items-center cursor-pointer hover:bg-[#EC662A]/10 rounded-lg'
         >
           <Image
-            className='border border-[#EC662A] aspect-video sm:aspect-square rounded-lg w-1/6 max-w-[64px] h-[6vh] sm:h-full'
+            className='border border-[#EC662A] aspect-square rounded-lg w-1/6 max-w-[64px]'
             width={40}
             height={40}
             src={nextListing.thumbnail}
