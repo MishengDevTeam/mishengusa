@@ -17,6 +17,8 @@ import toast from 'react-hot-toast';
 import { BsHeart, BsHeartFill } from 'react-icons/bs';
 import { FaRegShareSquare } from 'react-icons/fa';
 import { RiAlarmWarningLine } from 'react-icons/ri';
+import RentIndiFooterButton from './rent/RentIndiFooterButton';
+import useReportModal from '../hooks/useReportModal';
 
 interface BlogIndividualModalProps {}
 
@@ -25,6 +27,8 @@ const BlogIndividualModal: React.FC<BlogIndividualModalProps> = ({}) => {
   const [nextListing, setNextListing] = useState<any | null>(null);
 
   const blogIndividualModal = useBlogIndividualModal();
+  const reportModal = useReportModal();
+
   const params = useSearchParams();
   const blogid = params?.get('bloglisting');
 
@@ -39,7 +43,7 @@ const BlogIndividualModal: React.FC<BlogIndividualModalProps> = ({}) => {
     setIsLoading(true);
     if (blogid) {
       axios
-        .post(`/api/blogListing/blogListing`, {
+        .post(`/api/bloglisting`, {
           blogId: blogid,
         })
         .then((res) => {
@@ -93,12 +97,28 @@ const BlogIndividualModal: React.FC<BlogIndividualModalProps> = ({}) => {
     [params, router]
   );
 
+  const reportListing = () => {
+    blogIndividualModal.onClose();
+    reportModal.onOpen();
+  };
+
   if (!currentListing) return null;
 
+  const titleContent = (
+    <div className='w-full flex justify-center'>
+      <div className='w-3/4 truncate'>{currentListing.title}</div>
+    </div>
+  );
+
   const bodyContent = (
-    <div className='flex flex-col h-[60vh] sm:h-[70vh] overflow-y-scroll p-2'>
+    <div className='flex flex-col h-[55vh] sm:h-[70vh] overflow-y-scroll py-2 px-4 w-full'>
       <div className='flex justify-center flex-col w-full relative gap-4 '>
-        <p className='font-semibold text-lg'>{currentListing.title}</p>
+        <div className='w-full flex justify-center'>
+          <p className='font-semibold text-lg w-full truncate'>
+            {currentListing.title}
+          </p>
+        </div>
+
         <div className='flex flex-row justify-between'>
           <div className='flex gap-1'>
             <Image
@@ -119,24 +139,29 @@ const BlogIndividualModal: React.FC<BlogIndividualModalProps> = ({}) => {
           <BlogTextBox content={currentListing.content} />
         </div>
       </div>
-      <div className='absolute bottom-0 right-4 w-[28px] h-[28px] rounded-full'>
+      <div className='absolute bottom-0 right-2 translate-y-4 w-[28px] h-[28px] rounded-full'>
         <IoArrowDownCircleSharp size={28} color='#EC662A rounded-full' />
       </div>
     </div>
   );
 
   const footerContent = (
-    <div className='flex flex-col p-2 w-full sm:gap-1'>
-      <div className='flex justify-evenly'>
-        <button color='#9DCAEB' onClick={handleCopy}>
-          <FaRegShareSquare />
-          分享
-        </button>
-        <button color='#D0342C' onClick={() => {}}>
-          <RiAlarmWarningLine />
-          举报
-        </button>
+    <div className='flex flex-col py-2 px-4 w-full sm:gap-1'>
+      <div className={`flex justify-evenly`}>
+        <RentIndiFooterButton
+          color='#9DCAEB'
+          label='分享'
+          onClick={handleCopy}
+          icon={FaRegShareSquare}
+        />
+        <RentIndiFooterButton
+          color='#D0342C'
+          label='举报'
+          onClick={reportListing}
+          icon={RiAlarmWarningLine}
+        />
       </div>
+
       {nextListing ? (
         <div
           onClick={() => {
@@ -153,13 +178,13 @@ const BlogIndividualModal: React.FC<BlogIndividualModalProps> = ({}) => {
           />
           <div className='flex items-center justify-start w-5/6 h-full'>
             <p className='text-[14px] sm:text-lg text-neutral-600 overflow-hidden whitespace-wrap'>
-              {`이전 글 :${nextListing.title}`}
+              {`上一条 :${nextListing.title}`}
             </p>
           </div>
         </div>
       ) : (
-        <div className='w-full h-[8vh] sm:h-full flex justify-center items-center font-semibold'>
-          동일 카테고리 이전 블로그가 없습니다
+        <div className='w-full mt-4 h-full flex justify-center items-center font-semibold'>
+          已到第一条生活小助手！
         </div>
       )}
     </div>
@@ -169,7 +194,7 @@ const BlogIndividualModal: React.FC<BlogIndividualModalProps> = ({}) => {
     <Modal
       isOpen={blogIndividualModal.isOpen}
       onClose={blogIndividualModal.onClose}
-      title={' '}
+      title={titleContent}
       body={bodyContent}
       footer={footerContent}
     />

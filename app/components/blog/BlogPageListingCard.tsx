@@ -81,7 +81,6 @@ const BlogPageListingCard: React.FC<BlogPageListingCardProps> = ({
         />
       </div>
       <div className='w-[65%] sm:w-[70%] py-2 flex flex-col justify-center'>
-        {/* <div className='font-semibold'>카테고리: {category}</div> */}
         <p className='font-bold break-words md:truncate md:text-lg'>{title}</p>
         <div className='flex flex-col sm:flex-row justify-between sm:py-1'>
           <div className='flex gap-1'>
@@ -95,7 +94,7 @@ const BlogPageListingCard: React.FC<BlogPageListingCardProps> = ({
             <p className='text-[14px] text-neutral-600'>{author}</p>
           </div>
           <p className='text-[14px] text-neutral-600'>
-            작성일: {dateFormatter(new Date(createdAt))}
+            发布时间: {dateFormatter(new Date(createdAt))}
           </p>
         </div>
         <p className='break-words overflow-hidden hidden sm:block sm:h-[64px] text-[14px] font-light'>

@@ -12,11 +12,11 @@ const BlogSubMenuAd: React.FC<BlogSubMenuAdProps> = ({}) => {
         width={0}
         height={0}
         sizes='100%'
-        src={'/assets/images/logo/logo_square.png'}
+        src={'/assets/images/logo/square.png'}
         alt='img'
       />
       <div className='flex justify-center items-center absolute w-full h-full top-0 left-0 bg-neutral-900/50 text-[#fff] font-semibold text-sm md:text-base'>
-        광고
+        广告
       </div>
     </div>
   );

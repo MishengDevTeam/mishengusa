@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   const body = await request.json();
 
   const client = await mgClientPromise;
-  const blogCollection = client.db('misaeng').collection('BlogListing');
+  const blogCollection = client.db('misaeng').collection('CNBlogListing');
 
   const { blogOption, blogId } = body;
 

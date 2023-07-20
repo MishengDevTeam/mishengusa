@@ -21,12 +21,12 @@ export const BLOG_CATEGORY = {
 // };
 
 export const CATEGORY_OPTION = [
-  { label: '省钱攻略', value: '세일정보' },
-  { label: '签证', value: '비자' },
-  { label: '避税指南', value: '세금' },
-  { label: '吃吃喝喝', value: '맛집' },
-  { label: '生活周边', value: '생활' },
-  { label: '打卡圣地', value: '공연' },
-  { label: '运动', value: '운동' },
-  { label: '旅游攻略', value: '여행' },
+  { label: '省钱攻略', value: '省钱攻略' },
+  { label: '签证', value: '签证' },
+  { label: '避税指南', value: '避税指南' },
+  { label: '吃吃喝喝', value: '吃吃喝喝' },
+  { label: '生活周边', value: '生活周边' },
+  { label: '打卡圣地', value: '打卡圣地' },
+  { label: '运动', value: '运动' },
+  { label: '旅游攻略', value: '旅游攻略' },
 ];

@@ -6,7 +6,7 @@ import { IoMdClose } from 'react-icons/io';
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  title?: string;
+  title?: React.ReactElement | string;
   body: React.ReactElement | string;
   footer?: React.ReactElement | string;
   disabled?: boolean;

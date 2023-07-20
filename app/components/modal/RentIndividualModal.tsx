@@ -89,7 +89,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
       case 'kakao':
         return (
           <div className='w-full h-full flex flex-col items-center justify-center gap-2 py-2'>
-            <div className='flex justify-center items-center w-[42vw] max-w-[360px]'>
+            <div className='flex justify-center items-center w-[42vw] max-w-[360px] py-4'>
               <Image
                 width={200}
                 height={300}
@@ -97,7 +97,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
                 alt={'qr_image'}
               />
             </div>
-            <button
+            {/* <button
               onClick={() => {
                 handleCopy();
                 router.push('weixin://contacts/profile/cosHL0');
@@ -106,7 +106,7 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
             >
               <RiWechatFill size={24} />
               <span>点击这里!</span>
-            </button>
+            </button> */}
           </div>
         );
       // case 'email':
@@ -173,21 +173,21 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
       //   );
       case 'phone':
         return (
-          <div className='w-full h-full flex flex-col items-center justify-center gap-4 py-2'>
-            <div>米生: +1 914 294 8785</div>
+          <div className='w-full h-full flex flex-col items-center justify-center gap-8 px-4 py-8'>
+            {/* <div>米生: +1 914 294 8785</div> */}
             <a
               href='tel:9142948785'
-              className='flex items-center justify-center w-full bg-green-400 text-[#FFF] py-2 rounded-xl gap-2'
+              className='flex items-center justify-center w-full bg-green-400 text-[#FFF] py-2 rounded-full gap-2'
             >
               <MdPhone size={20} />
-              <p>点击这里打电话～</p>
+              <p>致电请点这里～</p>
             </a>
             <a
               href={`sms:9142948785&body=${currentLink}`}
-              className='flex items-center justify-center w-full bg-blue-400 text-[#FFF] py-2 rounded-xl gap-2'
+              className='flex items-center justify-center w-full bg-blue-400 text-[#FFF] py-2 rounded-full gap-2'
             >
               <MdTextsms size={20} />
-              点击这里发短信～
+              <p>短信请点这里～</p>
             </a>
           </div>
         );

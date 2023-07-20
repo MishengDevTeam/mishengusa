@@ -28,7 +28,12 @@ const BlogBody: React.FC<BlogBodyProps> = ({
   hideHotListing,
   setHideHotListing,
 }) => {
-  if (!listings) return <LoadingScreen />;
+  if (!listings)
+    return (
+      <div className='h-[70vh]'>
+        <LoadingScreen />
+      </div>
+    );
 
   let date = new Date();
   let month = date.getMonth() + 1;
