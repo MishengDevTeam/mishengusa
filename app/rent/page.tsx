@@ -27,6 +27,7 @@ const RentPage = ({}) => {
   const [searchListings, setSearchListings] = useState<any[] | null>(null);
   const [mapListings, setMapListings] = useState({});
   const [adviceOn, setAdviceOn] = useState<boolean>(true);
+  const [totalLength, setTotalLength] = useState(0);
 
   const rentIndividualModal = useRentIndividualModal();
   const rentNotiModal = useRentNotiModal();
@@ -57,6 +58,7 @@ const RentPage = ({}) => {
       try {
         const response = await axios.get(`/api/rentlisting`);
         setMapListings(response.data.mapListing);
+        setTotalLength(response.data.totalLength);
       } catch (error) {
         console.error('Error fetching data', error);
       } finally {
@@ -128,7 +130,7 @@ const RentPage = ({}) => {
             listings={listings}
             rentIndividualOpen={rentIndividualModal.onOpen}
             infiniteScrollNext={infiniteScrollNext}
-            totalLength={600}
+            totalLength={totalLength}
           />
         </div>
       </section>

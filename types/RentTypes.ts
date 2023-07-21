@@ -131,7 +131,7 @@ export const SEARCH_OPTIONS = {
     { label: '无中介费', value: '중개비 없음' },
   ],
   utility: [
-    { label: '无包括水电气', value: '유틸리티 별도' },
+    { label: '无包括水电', value: '유틸리티 별도' },
     { label: '包括水电气', value: '유틸리티 포함' },
   ],
 };

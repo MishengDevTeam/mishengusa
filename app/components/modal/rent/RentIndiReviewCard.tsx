@@ -20,7 +20,7 @@ const RentIndiReviewCard: React.FC<RentIndiReviewCardProps> = ({
       <div className='w-full flex flex-col items-center mb-4'>
         <div className='flex flex-col justify-center items-center w-full h-[240px] '>
           <div className='flex flex-col bg-[#fafafa] w-[90%] h-[90%] rounded-lg shadow-lg p-4'>
-            <div className='flex flex-row items-center justify-center w-full h-[30%] gap-2'>
+            <div className='flex flex-row items-center justify-center w-full h-[30%] gap-2 text-sm'>
               <div>综合评分</div>
               <div className='flex flex-row gap-1 items-center justify-center'>
                 <Stars value={reviewDetail.averageRate} />
@@ -28,7 +28,7 @@ const RentIndiReviewCard: React.FC<RentIndiReviewCardProps> = ({
               <div>{reviewDetail.averageRate}</div>
             </div>
             <hr />
-            <div className='grid grid-cols-4 w-full h-[60%]'>
+            <div className='grid grid-cols-4 w-full h-[60%] text-sm'>
               <div className='flex flex-col justify-center items-center'>
                 <div>公寓</div>
                 <Stars value={reviewDetail.buildingRate} rentModal />

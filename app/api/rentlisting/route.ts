@@ -41,6 +41,8 @@ export async function POST(request: Request) {
             imageSrc: 1,
             moveDate: 1,
             createdAt: 1,
+            broker: 1,
+            special: 1,
           },
         },
         { $sort: { createdAt: 1, _id: 1 } },
@@ -66,6 +68,8 @@ export async function POST(request: Request) {
             price: 1,
             imageSrc: 1,
             moveDate: 1,
+            broker: 1,
+            special: 1,
           },
         }
       )
@@ -97,6 +101,7 @@ export async function POST(request: Request) {
             title: 1,
             userId: 1,
             utility: 1,
+            special: 1,
           },
         }
       )
@@ -158,6 +163,7 @@ export async function POST(request: Request) {
             title: 1,
             userId: 1,
             utility: 1,
+            special: 1,
           },
         }
       )
@@ -260,6 +266,7 @@ export async function POST(request: Request) {
           title: 1,
           userId: 1,
           utility: 1,
+          special: 1,
         },
       })
       .sort({ price: 1 })
@@ -318,6 +325,8 @@ export async function GET(request: Request) {
     .find({}, { projection: { buildingId: 1, price: 1 } })
     .toArray();
 
+  const totalLength = rawData.length;
+
   const uniqueBids = new Set(rawData.map((rental) => rental.buildingId));
 
   const buildingData = await Promise.all(
@@ -353,5 +362,5 @@ export async function GET(request: Request) {
     }
   });
 
-  return NextResponse.json({ mapListing });
+  return NextResponse.json({ mapListing, totalLength });
 }

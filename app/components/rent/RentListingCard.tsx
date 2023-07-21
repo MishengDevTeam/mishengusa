@@ -74,6 +74,18 @@ const RentListingCard: React.FC<RentListingCardProps> = ({
             className='aspect-square h-auto rounded-lg object-cover w-full group-hover:scale-110 transition'
             alt='thumbnail'
           />
+          <div className='flex absolute top-1 left-1 gap-1'>
+            {listing.broker == '중개비 없음' && (
+              <div className='flex items-center justify-center w-[50px] h-[20px] bg-[#EC662A]/75 rounded-full z-5 text-[10px] text-white'>
+                无中介费
+              </div>
+            )}
+            {listing.special != '' && (
+              <div className='flex items-center justify-center w-[50px] h-[20px] bg-[#1E4620]/50 rounded-full z-5 text-[10px] text-white'>
+                SPECIAL
+              </div>
+            )}
+          </div>
         </div>
       </div>
       <div className='flex flex-col px-2 mt-1 gap-0'>

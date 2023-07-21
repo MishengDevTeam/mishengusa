@@ -210,7 +210,9 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
           <div className='md:text-sm'>今天: {dateFormatter(new Date())}</div>
         </div>
         <RentIndiPicture pictures={currentListing.imageSrc} />
-        <RentSpecial />
+        {currentListing.special != '' && (
+          <RentSpecial special={currentListing.special} />
+        )}
         <RentIndiInfo
           currentListing={currentListing}
           buildingInfo={buildingInfo}
