@@ -45,6 +45,7 @@ const MapSection: React.FC<MapSectionProps> = ({
         mapStyleCommon={mapStyleCommon}
         mapListings={mapListings}
         setSearchListings={setSearchListings}
+        setIsListingOn={setIsListingOn}
         rentmain
       />
       <RentSearchBar

@@ -5,7 +5,6 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import ToasterProvider from './components/ToasterProvider';
 import ReportModal from './components/modal/ReportModal';
-import { headers } from 'next/dist/client/components/headers';
 
 const font = Nunito_Sans({ subsets: ['latin'] });
 
@@ -19,10 +18,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const headersList = headers();
-  const domain = headersList.get('host') || '';
-  const fullUrl = headersList.get('referer') || '';
-
   return (
     <html lang='en'>
       <meta
@@ -34,7 +29,7 @@ export default function RootLayout({
         <ReportModal />
         <Navbar />
         {children}
-        {fullUrl.split('/')[3] != 'rent' ? <Footer /> : ''}
+        <Footer />
       </body>
     </html>
   );

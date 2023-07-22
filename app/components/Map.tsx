@@ -17,6 +17,7 @@ interface MapProps {
   showRange?: boolean;
   hasnavi?: boolean;
   mapListings?: MapListing;
+  setIsListingOn?: (listingOn: boolean) => void;
   setSearchListings?: (listing: any[]) => void;
 }
 
@@ -28,6 +29,7 @@ const Map: React.FC<MapProps> = ({
   hasnavi,
   setSearchListings,
   rentmain,
+  setIsListingOn,
 }) => {
   const mapContainer = useRef<any>(null);
   const map = useRef<mapboxgl.Map | any>(null);
@@ -152,6 +154,9 @@ const Map: React.FC<MapProps> = ({
               zoom: 15,
             });
             getBuildingData?.(building.buildingId);
+            setTimeout(() => {
+              setIsListingOn!(true);
+            }, 1000);
           };
           marker.getElement().addEventListener('click', getBuilding);
           alwaysVisiblePopup
@@ -160,7 +165,14 @@ const Map: React.FC<MapProps> = ({
         });
       }
     }
-  }, [initCoordinate, mapListings, rentmain, setSearchListings, showRange]);
+  }, [
+    initCoordinate,
+    mapListings,
+    rentmain,
+    setIsListingOn,
+    setSearchListings,
+    showRange,
+  ]);
 
   return (
     <div className={`relative w-full z-0 ${mapStyleCommon}`}>

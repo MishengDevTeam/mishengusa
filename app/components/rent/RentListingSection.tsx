@@ -56,7 +56,7 @@ const ListingSection: React.FC<ListingSectionProps> = ({
   return (
     <div
       className={`sm:relative flex flex-col w-full sm:w-[50%]
-    ${isListingOn ? 'absolute top-0 h-[100vh]' : 'relative bottom-0'}
+    ${isListingOn ? 'absolute top-0 h-[100vh]' : 'relative bottom-0 h-[106px]'}
     `}
     >
       <div
@@ -70,7 +70,7 @@ const ListingSection: React.FC<ListingSectionProps> = ({
           </div>
         ) : (
           <div className='flex flex-row items-center'>
-            <span>打开列表</span>
+            <span>点击打开列表</span>
             <MdOutlineKeyboardDoubleArrowUp size={20} />
           </div>
         )}
