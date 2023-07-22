@@ -24,7 +24,7 @@ export const MAIN_SECTION = {
   // },
 };
 
-export const FOOTER_MENU = ['Privacy Policy', 'Terms of Use', 'hohoho'];
+export const FOOTER_MENU = ['Privacy Policy', 'Terms of Use'];
 
 export const USER_MENU_ITEM = [
   { label: '找房子', url: 'rent' },

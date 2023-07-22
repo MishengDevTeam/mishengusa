@@ -4,7 +4,7 @@ export const BLOG_CATEGORY = {
   sale: '省钱攻略',
   travel: '旅游攻略',
   visa: '签证',
-  tax: '避税指南',
+  tax: '报税节税',
   sports: '运动',
   life: '生活周边',
 };
@@ -23,7 +23,7 @@ export const BLOG_CATEGORY = {
 export const CATEGORY_OPTION = [
   { label: '省钱攻略', value: '省钱攻略' },
   { label: '签证', value: '签证' },
-  { label: '避税指南', value: '避税指南' },
+  { label: '报税节税', value: '报税节税' },
   { label: '吃吃喝喝', value: '吃吃喝喝' },
   { label: '生活周边', value: '生活周边' },
   { label: '打卡圣地', value: '打卡圣地' },

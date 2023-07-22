@@ -20,9 +20,9 @@ const Footer: React.FC<FooterProps> = ({}) => {
       </div>
       <div className='flex flex-col items-center gap-4 py-8 cursor-default'>
         <Image
-          width={80}
-          height={360}
-          src={'/assets/images/logo/veri.png'}
+          width={69}
+          height={93}
+          src={'/assets/images/logo/logo_vert.png'}
           alt={'logo'}
         />
         <p>980 6th Ave, New York, NY 10018</p>

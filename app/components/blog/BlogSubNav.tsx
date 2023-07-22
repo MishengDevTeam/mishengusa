@@ -22,7 +22,7 @@ const BlogSubNav: React.FC<BlogSubNavProps> = ({
   return (
     <div className='flex flex-row justify-center p-4 shadow-sm'>
       <div className='flex flex-col md:flex-row justify-between gap-4 w-full max-w-[1280px]'>
-        <div className='grid grid-cols-4 md:grid-cols-8 gap-4'>
+        <div className='grid grid-cols-4 md:grid-cols-8 gap-4 md:gap-6'>
           {CATEGORY_OPTION.map((item: any) => (
             <div
               onClick={() => {
@@ -31,7 +31,7 @@ const BlogSubNav: React.FC<BlogSubNavProps> = ({
                 });
                 setHideHotListing(true);
               }}
-              className='flex justify-center items-center text-sm sm:text-[12px] lg:text-base py-1 px-2 cursor-pointer hover:bg-[#EC662A]/10 rounded-xl'
+              className='flex justify-center items-center text-sm lg:text-base py-1 cursor-pointer hover:bg-[#EC662A]/10 rounded-xl'
               key={item.label}
             >
               {item.label}

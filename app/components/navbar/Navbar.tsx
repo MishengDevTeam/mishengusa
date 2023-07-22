@@ -23,16 +23,16 @@ const Navbar: React.FC<NavbarProps> = ({}) => {
           <Link href='/' className='w-[140px]'>
             <Image
               className='hidden sm:block'
-              width={140}
-              height={40}
-              src={'/assets/images/logo/hori.png'}
+              width={122}
+              height={36}
+              src={'/assets/images/logo/logo_hori.png'}
               alt={'logo'}
             />
             <Image
               className='block sm:hidden'
-              width={56}
-              height={56}
-              src={'/assets/images/logo/square.png'}
+              width={122}
+              height={36}
+              src={'/assets/images/logo/logo_hori.png'}
               alt={'logo'}
             />
           </Link>

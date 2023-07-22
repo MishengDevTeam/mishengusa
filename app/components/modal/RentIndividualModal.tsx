@@ -269,12 +269,12 @@ const RentIndividualModal: React.FC<RentIndividualModalProps> = ({}) => {
           onClick={handleCopy}
           icon={FaRegShareSquare}
         />
-        <RentIndiFooterButton
+        {/* <RentIndiFooterButton
           color='#D0342C'
           label='举报'
           onClick={reportListing}
           icon={RiAlarmWarningLine}
-        />
+        /> */}
       </div>
       <div className='w-full mt-1'>
         {step == 1 ? (
