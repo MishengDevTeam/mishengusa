@@ -66,7 +66,7 @@ const RentListingCard: React.FC<RentListingCardProps> = ({
             src={
               listing.imageSrc[0] != ''
                 ? listing.imageSrc[0]
-                : '/assets/images/logo/square.png'
+                : '/assets/images/logo/logo_square_small.png'
             }
             width={0}
             height={0}
