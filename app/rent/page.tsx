@@ -22,7 +22,7 @@ const RentPage = ({}) => {
   const [listings, setListings] = useState<any[]>([]);
   const [start, setStart] = useState<string>('0');
   const [isLoading, setIsLoading] = useState(true);
-  const [isSearchOn, setIsSearchOn] = useState<boolean>(true);
+  const [isSearchOn, setIsSearchOn] = useState<boolean>(false);
   const [isListingOn, setIsListingOn] = useState<boolean>(false);
   const [searchListings, setSearchListings] = useState<any[] | null>(null);
   const [mapListings, setMapListings] = useState({});
@@ -103,7 +103,7 @@ const RentPage = ({}) => {
 
   return (
     <Suspense fallback={<SearchBarFallback />}>
-      <section className='w-full top-[64px] sm:top-[94px] relative pb-4 sm:pb-12 mb-12 '>
+      <section className='w-full top-[64px] sm:top-[94px] relative'>
         <RentIndividualModal />
         <div
           className={`relative flex flex-col sm:flex-row w-full justify-center

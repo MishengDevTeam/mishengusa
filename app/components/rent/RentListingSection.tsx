@@ -50,7 +50,7 @@ const ListingSection: React.FC<ListingSectionProps> = ({
   if (windowWidth > 640) {
     height = '83vh';
   } else {
-    height = isListingOn ? '76vh' : '42vh';
+    height = isListingOn ? '76vh' : '0vh';
   }
 
   return (
@@ -65,12 +65,12 @@ const ListingSection: React.FC<ListingSectionProps> = ({
       >
         {isListingOn ? (
           <div className='flex flex-row w-full h-full items-center justify-center'>
-            <span>点击关闭房源</span>
+            <span>地图视图</span>
             <MdOutlineKeyboardDoubleArrowDown size={20} />
           </div>
         ) : (
           <div className='flex flex-row items-center'>
-            <span>点击打开房源</span>{' '}
+            <span>打开列表</span>
             <MdOutlineKeyboardDoubleArrowUp size={20} />
           </div>
         )}
@@ -138,7 +138,7 @@ const ListingSection: React.FC<ListingSectionProps> = ({
           </div>
         </div>
       ) : (
-        <div className='flex justify-center items-center w-full h-full'>
+        <div className='flex justify-center items-center w-full h-[20vh] sm:h-full'>
           没有搜索结果
         </div>
       )}

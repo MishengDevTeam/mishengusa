@@ -5,12 +5,13 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import ToasterProvider from './components/ToasterProvider';
 import ReportModal from './components/modal/ReportModal';
+import { headers } from 'next/dist/client/components/headers';
 
 const font = Nunito_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '米生 - 海外租房、美国生活、',
-  description: '海外租房/美国生活/',
+  title: '米生 - 纽约租房、美国生活、留学咨询',
+  description: '纽约租房/美国生活/留学咨询',
 };
 
 export default function RootLayout({
@@ -18,6 +19,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = headers();
+  const domain = headersList.get('host') || '';
+  const fullUrl = headersList.get('referer') || '';
+
   return (
     <html lang='en'>
       <meta
@@ -29,7 +34,7 @@ export default function RootLayout({
         <ReportModal />
         <Navbar />
         {children}
-        <Footer />
+        {fullUrl.split('/')[3] != 'rent' ? <Footer /> : ''}
       </body>
     </html>
   );
