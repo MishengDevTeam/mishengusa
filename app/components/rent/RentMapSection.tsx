@@ -32,7 +32,7 @@ const MapSection: React.FC<MapSectionProps> = ({
   adviceOn,
   setAdviceOn,
 }) => {
-  const mapStyleCommon = `h-[74vh] sm:h-[90vh]`;
+  const mapStyleCommon = `h-[66vh] sm:h-[90vh]`;
 
   return (
     <div
