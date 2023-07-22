@@ -1,12 +1,16 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, Suspense } from 'react';
 import BlogBody from '../components/blog/BlogBody';
 import BlogSubNav from '../components/blog/BlogSubNav';
 import axios from 'axios';
 import BlogIndividualModal from '../components/modal/BlogIndividualModal';
 import useBlogIndividualModal from '../components/hooks/useBlogIndividualModal';
 import { useSearchParams } from 'next/navigation';
+
+function SearchBarFallback() {
+  return <>placeholder</>;
+}
 
 export interface IFecthBlogQuery {
   start: number;
@@ -53,22 +57,24 @@ const BlogPage = ({}) => {
   }, []);
 
   return (
-    <div className='relative pt-[64px] sm:pt-[94px]'>
-      <BlogIndividualModal />
-      <BlogSubNav
-        fetchBlogListing={fetchBlogListing}
-        setHideHotListing={setHideHotListing}
-      />
-      <BlogBody
-        BlogIndividualOpen={blogIndividualModal.onOpen}
-        hideHotListing={hideHotListing}
-        setHideHotListing={setHideHotListing}
-        isLoading={isLoading}
-        listings={listings}
-        setListings={setListings}
-        fetchBlogListing={fetchBlogListing}
-      />
-    </div>
+    <Suspense fallback={<SearchBarFallback />}>
+      <div className='relative pt-[64px] sm:pt-[94px]'>
+        <BlogIndividualModal />
+        <BlogSubNav
+          fetchBlogListing={fetchBlogListing}
+          setHideHotListing={setHideHotListing}
+        />
+        <BlogBody
+          BlogIndividualOpen={blogIndividualModal.onOpen}
+          hideHotListing={hideHotListing}
+          setHideHotListing={setHideHotListing}
+          isLoading={isLoading}
+          listings={listings}
+          setListings={setListings}
+          fetchBlogListing={fetchBlogListing}
+        />
+      </div>
+    </Suspense>
   );
 };
 export default BlogPage;
