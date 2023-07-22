@@ -103,7 +103,11 @@ const RentPage = ({}) => {
 
   return (
     <Suspense fallback={<SearchBarFallback />}>
-      <section className='w-full top-[64px] sm:top-[94px] relative pb-10 sm:pb-12 mb-12 '>
+      <section
+        className={`w-full top-[64px] sm:top-[94px] relative sm:pb-12 mb-12
+      ${isListingOn ? 'pb-10' : 'pb-4'}
+      `}
+      >
         <RentIndividualModal />
         <div
           className={`relative flex flex-col sm:flex-row w-full justify-center
