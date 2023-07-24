@@ -55,8 +55,8 @@ const ListingSection: React.FC<ListingSectionProps> = ({
 
   return (
     <div
-      className={`sm:relative flex flex-col w-full sm:w-[50%]
-    ${isListingOn ? 'absolute top-0 h-[100vh]' : 'relative bottom-0 h-[106px]'}
+      className={`sm:relative flex flex-col w-full sm:w-[50%] sm:h-[90vh] bg-white
+    ${isListingOn ? 'absolute top-0 h-[90vh]' : 'relative bottom-0 h-[106px]'}
     `}
     >
       <div
@@ -126,7 +126,7 @@ const ListingSection: React.FC<ListingSectionProps> = ({
       ) : searchListings?.length != 0 ? (
         <div className='h-[76vh] sm:h-[83vh] overflow-y-scroll'>
           <div
-            className={`grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 min-[1960px]:grid-cols-4 min-[2400px]:grid-cols-5 p-4 sm:pt-0 overflow-x-hidden overflow-y-scroll gap-2 items-start sm:h-auto`}
+            className={`grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 min-[1960px]:grid-cols-4 min-[2400px]:grid-cols-5 p-4 sm:pt-0 overflow-x-hidden overflow-y-scroll gap-2 items-start sm:h-full`}
           >
             {searchListings?.map((listing) => (
               <RentListingCard

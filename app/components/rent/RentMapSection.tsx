@@ -35,11 +35,7 @@ const MapSection: React.FC<MapSectionProps> = ({
   const mapStyleCommon = `h-[62vh] sm:h-[90vh]`;
 
   return (
-    <div
-      className={`relative w-full sm:w-[50%] ${
-        isListingOn ? 'hidden' : 'block'
-      } ${mapStyleCommon}`}
-    >
+    <div className={`relative w-full sm:w-[50%] ${mapStyleCommon}`}>
       <Map
         initCoordinate={[-74.0085514, 40.7127503]}
         mapStyleCommon={mapStyleCommon}
