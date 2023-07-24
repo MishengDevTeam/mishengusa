@@ -13,6 +13,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
             href={item.url}
             key={FOOTER_MENU.indexOf(item)}
             className='hover:text-[#EC662A]'
+            target='_blank'
           >
             {item.label}
           </Link>
