@@ -24,7 +24,14 @@ export const MAIN_SECTION = {
   // },
 };
 
-export const FOOTER_MENU = ['Privacy Policy', 'Terms of Use'];
+export const FOOTER_MENU = [
+  { label: 'Privacy Policy', url: '/' },
+  { label: 'Terms of Use', url: '/' },
+  {
+    label: 'Fair Housing Notice',
+    url: 'https://dos.ny.gov/fair-housing-notice',
+  },
+];
 
 export const USER_MENU_ITEM = [
   { label: '找房子', url: 'rent' },

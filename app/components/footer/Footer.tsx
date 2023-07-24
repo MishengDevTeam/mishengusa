@@ -10,11 +10,11 @@ const Footer: React.FC<FooterProps> = ({}) => {
       <div className='flex flex-col md:flex-row items-center gap-8'>
         {FOOTER_MENU.map((item) => (
           <Link
-            href={'/'}
+            href={item.url}
             key={FOOTER_MENU.indexOf(item)}
             className='hover:text-[#EC662A]'
           >
-            {item}
+            {item.label}
           </Link>
         ))}
       </div>
